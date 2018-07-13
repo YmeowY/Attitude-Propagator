@@ -18,6 +18,11 @@
 
 ## 3. Change Log
 
+### 2018年7月13日**v0.0**
+
+1. added attitude propagator to the project. but it is not yet right. still debuging.
+2. added [```Euler angle``` -> ```quaternion function```](http://www.euclideanspace.com/maths/geometry/rotations/conversions/eulerToQuaternion/index.htm). All the build-in functions about transferring [Euler angle] to any other things went wrong, at least on my *R2017a* version one. Don't know why, so I have to code it by myself. That is a little heavy for me ```_(:з」∠)_```.
+
 ### 2018年7月11日
 
 initiate the project.
