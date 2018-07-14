@@ -18,6 +18,10 @@
 
 ## 3. Change Log
 
+### 2018年7月14日**v0.0.1**
+
+1. examined the attitude propagator. Nothing wrong, at least not in the comparison with simulink.
+
 ### 2018年7月13日**v0.0**
 
 1. added attitude propagator to the project. but it is not yet right. still debuging.
