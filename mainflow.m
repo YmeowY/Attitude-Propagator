@@ -18,7 +18,8 @@ A.Is_1 = Is_1;
 %% before propagation
 atts = [];
 f = @Prop_Attitude;
-%%
+
+%% attitude propagate
 for i = [1:h:1000]
     atts = [atts; att];
     
@@ -32,3 +33,9 @@ for i = [1:h:1000]
     att = RK4(f, i, att, A, h);
 end
 
+%% Chenck Euler angle
+angles = [];
+for i = 1:length(atts)
+    angle = Trans_quat2eul(atts(i, 1:4));
+    angles = [angles; angle];
+end

@@ -6,4 +6,5 @@
 *.vsdx
 *.mat
 *.pptx
+*.autosave
 /.vscode/
