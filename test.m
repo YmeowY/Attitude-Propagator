@@ -11,3 +11,7 @@ for i = 1:length(eul)
     end
 end
 dAng = angles - eul(1:1000, :);
+quat2eul([1, 0, 0, 0]);
+
+%%
+eul(2,:) - angles(2,:)

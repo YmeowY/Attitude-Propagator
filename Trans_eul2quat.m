@@ -10,18 +10,14 @@ function quat = Trans_eul2quat(eul)
 %}
 
 %%
-c1 = cos(eul(1) / 2);
-c2 = cos(eul(2) / 2);
-c3 = cos(eul(3) / 2);
-s1 = sin(eul(1) / 2);
-s2 = sin(eul(2) / 2);
-s3 = sin(eul(3) / 2);
+c = cos(eul / 2);
+s = sin(eul / 2);
 
 %% Euler angle -> quaternion
-w = c1 * c2 * c3 - s1 * s2 * s3;
-x = s1 * s2 * c3 + c1 * c2 * s3;
-y = s1 * c2 * c3 + c1 * s2 * s3;
-z = c1 * s2 * s3 - s1 * c2 * s3;
+w = c(1) * c(2) * c(3) + s(1) * s(2) * s(3);
+x = c(1) * c(2) * s(3) - s(1) * s(2) * c(3);
+y = c(1) * s(2) * c(3) + s(1) * c(2) * s(3);
+z = s(1) * c(2) * c(3) - c(1) * s(2) * s(3);
 
 %%
 quat = [w, x, y, z];

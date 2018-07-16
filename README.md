@@ -23,6 +23,13 @@
 
 ## 3. Change Log
 
+### 2018年7月16日
+
+1. change the *Trans_eul2quat.m* to like the build-in function *eul2quat*.
+2. change the *Trans_quat2eul.m* to like the build-in function *quat2eul*.
+
+Q: the rotation sequence is not yet the same like simulink.
+
 ### 2018年7月15日
 
 1. added [```quaternion -> Euler angle```](http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToEuler/index.htm) to the project. But it is not yet right.

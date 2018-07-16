@@ -1,4 +1,4 @@
-function eul = Trans_quat2eul(quat)
+function eul = Trans_uat2eul(quat)
 %{
 % fucntion: quaternion -> Euler angle
 
@@ -8,18 +8,23 @@ function eul = Trans_quat2eul(quat)
 % return:
 > eul: Euler angle
 %}
+q = quat / norm(quat);
 
 %%
-w = quat(1);
-x = quat(2);
-y = quat(3);
-z = quat(4);
+w = q(1);
+x = q(2);
+y = q(3);
+z = q(4);
 
 %%
-ax = atan2(2 * (y * w - x * z), 1 - 2 * (y * y - z *z));
-ay = asin(2 * x * y + 2 * z * w);
-az = atan2(2 * (x * w - y * z), 1 - 2 * (x * x - z * z));
+qq = -2*(x * z - w * y);
+if qq > 1.0
+    qq = 1.0;
+end
 
+ax = atan2(2 * (x * y+w * z), w ^ 2 + x ^ 2 - y ^ 2 - z ^ 2);
+ay = sin(qq);
+az = atan2(2 * (y * z + w * x), w ^ 2 - x ^ 2 - y ^ 2 + z ^ 2);
 %%
 eul = [ax, ay, az];
 end
